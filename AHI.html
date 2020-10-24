@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>HackTX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="slides.css">
+<link rel="stylesheet" type="text/css" href="./map.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+    background: black;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="pg-top">
+  <div class="pg-bar pg-black pg-card" id="myNavbar">
+    <a href="#home" class="pg-bar-item pg-button pg-wide">AUSTIN'S AFFORDABLE HOUSING INVENTORY</a>
+    <!-- Right-sided navbar links -->
+    <div class="pg-right pg-hide-small">
+      <a class="pg-bar-item pg-button" style = "margin-right: 10px">Made for HackTX</a>
+    </div>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3oeWI7OkJQWnYyBKNG2aJVZl1J5MJea8&callback=initMap">
+    </script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="mapRepurposing.js"></script>
+</body>
+</html>

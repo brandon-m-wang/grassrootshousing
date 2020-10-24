@@ -1,0 +1,64 @@
+#map {
+    height: 700px;  /* The height is 1000 pixels */
+    width: 100%;  /* The width is the width of the web page */
+    border: 1px solid white;
+   }
+   #description{
+     background-color: rgba(105, 105, 105, 0.5);
+     padding: 15px;
+     margin-top: 10px;
+     border: 1px solid white;
+   }
+   body{
+     height: 100%;
+       padding-top: 3em;
+     /*border-top: 3px solid black;
+     /* border-left: 3px solid black;
+     border-right: 3px solid black; */
+   }
+   .content{
+     padding-right: 20px;
+     padding-left: 20px;
+   }
+   .btn-group {
+       /* padding-bottom: 1%; */
+       padding-top: 3px;
+       padding-bottom: 3px;
+       padding-right: 1%;
+       margin-bottom: 10px;
+       font-family: Verdana, Geneva, sans-series;
+       font-weight: bolder;
+   }
+   h3{
+     text-align: center;
+     padding-top: 25px;
+     padding-bottom: 25px;
+   }
+
+   .topic{
+       width: 100%;
+       height: 12em;
+       display: block;
+       background-color: #121416;
+   }
+   .logocontainer{
+       text-align: center;
+       width: 50%;
+       margin: 0 auto;
+   }
+   .topic h6{
+     /* position: relative; */
+     color: #e9a935;
+     font-size: x-small;
+     font-family: Verdana, Geneva, sans-series;
+     float: left;
+   }
+   .topic img{
+    /* top: 50%; */
+    margin-top: 1em;
+    width:18em;
+    height:9em;
+   }
+   .btn-btn-dark-dropdown-toggle{
+       color: #121416;
+   }
