@@ -87,84 +87,69 @@ function initMap() {
     });
 }
 
-let circleArray = []
+let polygonArray = []
 
 let contentString = "Location: South Park Date: 8/31/2020 Description: Anti-Black assault on multiple local community members. In violation of state (RCW 9A.36.080), and municipal code (SMC 12A.06.115)."
 
-fetch('https://us-central1-safeguard-292111.cloudfunctions.net/getAllCrimes')
+fetch('https://grassrootsforfamiliesserver.azurewebsites.net/get_all_redlinings')
     .then(response => response.json())
-    .then(data => drawCircles(data[0]));
-
-
+    .then(data => drawCircles(data["redlinings"]));
+    //.then(data => console.log(data["redlinings"][0]["coordinates"]));
+    
 function drawCircles(data) {
-    for (let i in circleArray) {
-        circleArray[i].setMap(null)
-    }
-    circleArray = []
+    // for (let i in polygonArray) {
+    //     polygonArray[i].setMap(null)
+    // }
+    polygonArray = []
     for (key in data) {
-        latlngobj = key.split(", ")
-        latlngobj = {lat: parseFloat(latlngobj[0]), lng: parseFloat(latlngobj[1])}
-        if (data[key] < 10) {
-            const circle = new google.maps.Circle({
-                fillColor: '#e29002',
-                fillOpacity: .8,
-                strokeColor: 'white',
-                strokeWeight: .5,
-                clickable: true,
-                map,
-                center: latlngobj,
-                radius: Math.sqrt(data[key]) * 50
-            })
-            circleArray.push(circle)
-            let infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            google.maps.event.addListener(circle, 'click', function (ev) {
-                infowindow.setPosition(circle.getCenter());
-                infowindow.open(map);
-            });
-        } else if (data[key] < 50) {
-            const circle = new google.maps.Circle({
-                fillColor: '#ca3900',
-                fillOpacity: .8,
-                strokeColor: 'white',
-                strokeWeight: .5,
-                clickable: true,
-                map,
-                center: latlngobj,
-                radius: Math.sqrt(data[key]) * 50
-            })
-            circleArray.push(circle)
-            let infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            google.maps.event.addListener(circle, 'click', function (ev) {
-                infowindow.setPosition(circle.getCenter());
-                infowindow.open(map);
-            });
-        } else {
-            const circle = new google.maps.Circle({
-                fillColor: '#d00000',
-                fillOpacity: .8,
-                strokeColor: 'white',
-                strokeWeight: .5,
-                clickable: true,
-                map,
-                center: latlngobj,
-                radius: Math.sqrt(data[key]) * 50
-            })
-            circleArray.push(circle)
-            let infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            google.maps.event.addListener(circle, 'click', function (ev) {
-                infowindow.setPosition(circle.getCenter());
-                infowindow.open(map);
-            });
+        polyCoords = []
+        datapoint = data[key]["coordinates"]
+        grade = data[key]["holc_grade"]
+        for (coord in datapoint) {
+            vertex = datapoint[coord]
+            latlngobj = {lat: parseFloat(vertex[1]), lng: parseFloat(vertex[0])}
+            polyCoords.push(latlngobj)
         }
-
+        console.log(polyCoords)
+        switch(grade){
+            case "A":
+                //Green
+                color = "#61bd4f"
+                break;
+            case "B":
+                //Blue
+                color = "#0080FF"
+                break;
+            case "C":
+                //Yellow
+                color = "#FFEA61"
+                break;
+            case "D":
+                //Red
+                color = "#ED2939"
+                break;
+        }
+        //Make new polygon
+        console.log(color)
+        const polygon = new google.maps.Polygon({
+            paths: polyCoords,
+            strokeColor: "#white",
+            strokeOpacity: 0.5,
+            strokeWeight: .5,
+            fillColor: color,
+            fillOpacity: 0.5,
+        });
+        // cons0ole.log(polygon)
+        polygon.setMap(map)
+        // polygonArray.push(polygon)
+        // let infowindow = new google.maps.InfoWindow({
+        //     content: contentString
+        // });
+        // google.maps.event.addListener(circle, 'click', function (ev) {
+        //     infowindow.setPosition(circle.getCenter());
+        //     infowindow.open(map);
+        // });
     }
-    ;
 }
 
 
@@ -185,54 +170,3 @@ function submitUserData() {
         .then(response => response.json())
         .then(data => drawCircles(data[0]));
 }
-
-
-/*  NO LONGER RELEVANT ------
-          // Create a <script> tag and set the USGS URL as the source.
-          var script = document.createElement('script');
-
-          // // This example uses a local copy of the GeoJSON stored at
-          // http:earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-          script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-*/
-//loading data using JSON file
-// map.data.loadGeoJson("data.JSON");
-
-/*         document.getElementsByTagName('head')[0].appendChild(script);
-
-        map.data.setStyle(function(feature) {
-          var magnitude = feature.getProperty('mag');
-          return {
-            icon: getCircle(magnitude)
-          };
-        });
-
-      }
-
-      function getCircle(magnitude) {
-        return {
-          path: google.maps.SymbolPath.CIRCLE,
-          fillColor: '#e27500',
-          fillOpacity: .2,
-          scale: Math.pow(2, magnitude) / 2,
-          strokeColor: 'white',
-          strokeWeight: .5
-        };
-      }
-
-      function eqfeed_callback(results) {
-        map.data.addGeoJson(results);
-      }
-*/
-// const infowindow = new google.maps.InfoWindow({
-//   content: 'contentString'
-// });
-
-// const marker = new google.maps.Marker({
-//   position: uluru,
-//   map,
-//   title: "Uluru (Ayers Rock)",
-// });
-// marker.addListener("click", () => {
-//   infowindow.open(map, marker);
-// });
