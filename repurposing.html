@@ -19,8 +19,108 @@
         background: black;
     }
 </style>
-<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7;
+        z-index: 100;
+        display: none;
+    }
 
+    .cnt223 a {
+        text-decoration: none;
+    }
+
+    .popup {
+        width: 100%;
+        margin: 0 auto;
+        display: none;
+        position: fixed;
+        z-index: 101;
+    }
+
+    .cnt223 {
+        min-width: 600px;
+        width: 600px;
+        min-height: 150px;
+        margin: 100px auto;
+        background: #f3f3f3;
+        position: relative;
+        z-index: 103;
+        padding: 15px 35px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #000;
+    }
+
+    .cnt223 p {
+        clear: both;
+        color: #555555;
+        /* text-align: justify; */
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+
+    .cnt223 p a {
+        color: #d91900;
+        font-weight: bold;
+    }
+
+    .cnt223 .x {
+        float: right;
+        height: 35px;
+        left: 22px;
+        position: relative;
+        top: -25px;
+        width: 34px;
+    }
+
+    .cnt223 .x:hover {
+        cursor: pointer;
+    }
+</style>
+<script type='text/javascript'>
+    $(function () {
+        var overlay = $('<div id="overlay"></div>');
+        overlay.show();
+        overlay.appendTo(document.body);
+        $('.popup').show();
+        $('.close').click(function () {
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+
+
+        $('.x').click(function () {
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+    });
+</script>
+<div class='popup'>
+    <div class='cnt223'>
+        <h1 style = "text-align: center">Learn about repurposing unused space for social good.</h1>
+        <p>
+            Feel free to zoom and interact with elements on the map to learn more. Each dot represents an inactive lot space/commercial building for the last 18 months.
+            <br/>
+            <br/>
+            <div style = "display: flex; justify-items: center; font-size: larger; font-weight: bolder">
+            <a href='' class='close' style = "color: black; margin: 0 auto;">Close</a>
+            </div>
+        </p>
+    </div>
+</div>
+<body>
 <!-- Navbar (sit on top) -->
 <div class="pg-top">
     <div class="pg-bar pg-black pg-card" id="myNavbar">
@@ -66,15 +166,23 @@
         <div style="background:#000000;">
             <h2>PARKING LOTS
             </h2>
-            <p>An alternative to using un-occupied offices would be to use empty parking lots. There are numerous parking lots in the Austin area that are either unoccupied, or too large given the amount of traffic they receive on a daily basis.
-            </p><p>
-Using parking lots as a source of housing space would be great in that buildings would be able to be constructed relatively quickly, as there’s no existing structures to tear down. This source of affordable housing would be especially effective in Austin’s suburban areas, where parking lots are more common compared to in Austin’s metropolitan area.
-</p>
+            <p>An alternative to using un-occupied offices would be to use empty parking lots. There are numerous
+                parking lots in the Austin area that are either unoccupied, or too large given the amount of traffic
+                they receive on a daily basis.
+            </p>
+            <p>
+                Using parking lots as a source of housing space would be great in that buildings would be able to be
+                constructed relatively quickly, as there’s no existing structures to tear down. This source of
+                affordable housing would be especially effective in Austin’s suburban areas, where parking lots are more
+                common compared to in Austin’s metropolitan area.
+            </p>
         </div>
         <div style="background:#000000;">
             <h2>WHAT'S NEXT?</h2>
-            <p>If you see a parking lot or office space that would be great for repurposing, contact a local politician about it. Constructing affordable housing begins with changing the zoning laws that govern these parking lots and office spaces, and with enough support that change can certainly be made.
-</p>
+            <p>If you see a parking lot or office space that would be great for repurposing, contact a local politician
+                about it. Constructing affordable housing begins with changing the zoning laws that govern these parking
+                lots and office spaces, and with enough support that change can certainly be made.
+            </p>
         </div>
     </div>
 

@@ -3,7 +3,7 @@ var map;
 function initMap() {
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 14,
         center: {lat: 30.2672, lng: -97.7431},
         styles: [
             {elementType: "geometry", stylers: [{color: "#242f3e"}]},

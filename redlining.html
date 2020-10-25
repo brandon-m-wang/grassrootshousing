@@ -20,8 +20,107 @@
         background: black;
     }
 </style>
-<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7;
+        z-index: 100;
+        display: none;
+    }
 
+    .cnt223 a {
+        text-decoration: none;
+    }
+
+    .popup {
+        width: 100%;
+        margin: 0 auto;
+        display: none;
+        position: fixed;
+        z-index: 101;
+    }
+
+    .cnt223 {
+        min-width: 600px;
+        width: 600px;
+        min-height: 150px;
+        margin: 100px auto;
+        background: #f3f3f3;
+        position: relative;
+        z-index: 103;
+        padding: 15px 35px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #000;
+    }
+
+    .cnt223 p {
+        clear: both;
+        color: #555555;
+        /* text-align: justify; */
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+
+    .cnt223 p a {
+        color: #d91900;
+        font-weight: bold;
+    }
+
+    .cnt223 .x {
+        float: right;
+        height: 35px;
+        left: 22px;
+        position: relative;
+        top: -25px;
+        width: 34px;
+    }
+
+    .cnt223 .x:hover {
+        cursor: pointer;
+    }
+</style>
+<script type='text/javascript'>
+    $(function () {
+        var overlay = $('<div id="overlay"></div>');
+        overlay.show();
+        overlay.appendTo(document.body);
+        $('.popup').show();
+        $('.close').click(function () {
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+
+
+        $('.x').click(function () {
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+    });
+</script>
+<div class='popup'>
+    <div class='cnt223'>
+        <h1 style = "text-align: center">Welcome to the GFH Educational Platform!</h1>
+        <p>
+            Feel free to zoom and interact with elements on the map to learn more about Austin's subtle redlining discriminatory practices against lower socioeconomic stratifications.
+            <br/>
+            <br/>
+            <div style = "display: flex; justify-items: center; font-size: larger; font-weight: bolder">
+            <a href='' class='close' style = "color: black; margin: 0 auto;">Close</a>
+            </div>
+        </p>
+    </div>
+</div>
 <!-- Navbar (sit on top) -->
 <div class="pg-top">
     <div class="pg-bar pg-black pg-card" id="myNavbar">
@@ -110,7 +209,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 37%, rgb(22,22,22) 100%);">
         <span class="pg-jumbo pg-hide-small" style="font-weight: bolder; color: white">Keep the momentum:</span>
     </div>
     <p style="display: flex;
-  justify-content: center;"><a href="redlining.html"
+  justify-content: center;"><a href="http://chng.it/V8sZTDvb" target = "_blank"
                                class="pg-button pg-white pg-padding-large pg-large pg-margin-top pg-opacity pg-hover-opacity-off">Sign
         a <b>PETITION</b></a></p>
 </div>
