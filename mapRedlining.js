@@ -1,6 +1,7 @@
 var map;
 
 function initMap() {
+    geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: {lat: 30.2672, lng: -97.7431},
@@ -86,7 +87,6 @@ function initMap() {
         ],
     });
 }
-
 let polygonArray = []
 
 let contentString = "Location: South Park Date: 8/31/2020 Description: Anti-Black assault on multiple local community members. In violation of state (RCW 9A.36.080), and municipal code (SMC 12A.06.115)."
@@ -162,3 +162,32 @@ function drawCircles(data) {
         });
     }
 }
+function codeAddress() {
+    const icons = {
+        nice: {
+            icon: "http://maps.google.com/mapfiles/kml/paddle/wht-diamond.png"
+        }
+    }
+    var address = document.getElementById('myInput').value;
+    geocoder.geocode({'address': address}, function (results, status) {
+        if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location,
+                icon: icons["nice"].icon
+            });
+            map.setZoom(15);
+            map.panTo(marker.position);
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
+$(function () {
+    $("#submission").click(function (event) {
+        codeAddress()
+        event.preventDefault()
+    });
+});

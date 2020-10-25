@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="form.css">
 <link rel="stylesheet" href="slides.css">
 <link rel="stylesheet" type="text/css" href="./map.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -78,6 +79,24 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 37%, rgb(22,22,22) 100%);">
 <p style = "display: flex;
   justify-content: center;"><a href="redlining.html" class="pg-button pg-white pg-padding-large pg-large pg-margin-top pg-opacity pg-hover-opacity-off">Sign a <b>PETITION</b></a></p>
 </div>
+
+<form id = "myForm" onsubmit="return false">
+    <div style = "display:flex; justify-content: center; margin-top: 50px">
+<p>
+	<span class="input">
+		<input type="text" id = "myInput" placeholder="Check my zoning">
+		<span></span>
+	</span>
+</p>
+    </div>
+    <div class="cntr" style = "display: flex; justify-content: center; margin-bottom: 50px">
+  <button id = "submission" type="submit">SUBMIT</button>
+</div>
+</form>
+
+
+
+
 
 <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3oeWI7OkJQWnYyBKNG2aJVZl1J5MJea8&callback=initMap">
