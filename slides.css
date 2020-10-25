@@ -130,6 +130,13 @@ body { margin: 0; font: 16px/1.3 sans-serif; }
 	word-spacing: 0.2em;
 	font-size: 3em;
 }
+
+.CSSgal .slider p {
+	text-align: left;
+	margin-left: 450px;
+	margin-right: 450px;
+}
+
 .CSSgal a {
 	border-radius: 50%;
 	margin: 0 3px;

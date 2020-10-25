@@ -6,109 +6,147 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="form.css">
 <link rel="stylesheet" href="slides.css">
-<link rel="stylesheet" type="text/css" href="./map.css" />
+<link rel="stylesheet" type="text/css" href="./map.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", sans-serif
+    }
 
-body, html {
-  height: 100%;
-  line-height: 1.8;
-    background: black;
-}
+    body, html {
+        height: 100%;
+        line-height: 1.8;
+        background: black;
+    }
 </style>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="pg-top">
-  <div class="pg-bar pg-black pg-card" id="myNavbar">
-    <a href="./index.html" class="pg-bar-item pg-button pg-wide">THE REDLINING ISSUE</a>
-    <!-- Right-sided navbar links -->
-    <div class="pg-right pg-hide-small">
-      <a class="pg-bar-item pg-button" style = "margin-right: 10px">Made for HackTX</a>
+    <div class="pg-bar pg-black pg-card" id="myNavbar">
+        <a href="./index.html" class="pg-bar-item pg-button pg-wide">THE REDLINING ISSUE</a>
+        <!-- Right-sided navbar links -->
+        <div class="pg-right pg-hide-small">
+            <a class="pg-bar-item pg-button" style="margin-right: 10px">Made for HackTX</a>
+        </div>
     </div>
-  </div>
 </div>
 
 <div id="map"></div>
 
 <div class="CSSgal">
 
-  <s id="s1"></s>
-  <s id="s2"></s>
-  <s id="s3"></s>
-  <s id="s4"></s>
+    <s id="s1"></s>
+    <s id="s2"></s>
+    <s id="s3"></s>
+    <s id="s4"></s>
 
-  <div class="slider">
-    <div style="background:#000000;">
-			<h2>What is Redlining?</h2>
-			<p>Redlining is a discriminatory practice that puts services (financial and otherwise) out of reach for residents of certain areas based on race or ethnicity. It can be seen in the systematic denial of mortgages, insurance, loans, and other financial services based on location (and that area’s default history) rather than on an individual’s qualifications and creditworthiness. Notably, the policy of redlining is felt the most by residents of minority neighborhoods.For decades, many banks in the U.S. denied mortgages to people, mostly people of color in urban areas, preventing them from buying a home in certain neighborhoods or getting a loan to renovate their house. The practice — once backed by the U.S. government — started in the 1930s and took place across the country.</p>
-		</div>
-    <div style="background:#000000;">
-			<h2>Slide 2</h2>
-		</div>
-    <div style="background:#000000;">
-			<h2>Slide 3</h2>
-		</div>
-    <div style="background:#000000;">
-			<h2>Slide 4</h2>
-		</div>
-  </div>
+    <div class="slider">
+        <div style="background:#000000;">
+            <h2>OUR INTERACTIVE MAP</h2>
+            <p>The interactive map displayed above shows how historical redlining practices have shaped Austin’s racial
+                and economic landscape. The interactive map above shows a “redlining” map drawn by the Home Owners' Loan
+                Corporation (HOLC) in July 1934 layered on top of a map of Austin today. Established as part of the New
+                Deal, the HOLC was designed to assist homeowners who were defaulted on mortgages. These redlining maps
+                were drawn to classify neighborhoods by levels of perceived lending risk based on economic and racial
+                composition.</p>
+            <p>This Austin map in particular contains 18 residential zones in Austin’s metropolitan area, ranking them
+                from A - Best, to D - Hazardous. Note how many of the “D” ranked regions still have low median incomes
+                and high minority populations.</p>
+        </div>
+        <div style="background:#000000;">
+            <h2>HISTORICAL REDLINING IN AUSTIN</h2>
+            <p>This practice of isolating minorities began with the implementation of a “Negro District” in 1928, which
+                made East Austin the only place where African Americans could access schools and other public services.
+                Many neighborhoods with the restriction that properties could only be sold to whites, most famously Hyde
+                Park, were also built around this time.</p>
+            <p>These explicitly racist housing restrictions were eventually removed, but were replaced by more subtle
+                means. Since African Americans possessed less generational
+                wealth and opportunities for employment, they could not afford to move into these richer neighborhoods,
+                and as a result continued to be denied access to Austin’s best schools, parks, etc.
+            </p>
+        </div>
+        <div style="background:#000000;">
+            <h2>EFFECTS OF REDLINING</h2>
+            <p>Redlining continues to be a problem in Austin. This can be seen in how Austin is one of the most racially
+                and economically segregated metro areas in the US. Austin continues to be racially divided along I-35:
+                African American and Hispanic populations remain concentrated east of the highway, while the population
+                west of the highway is predominantly white. This continued exclusion of minorities from good households
+                and neighborhoods has led to crime and poverty being concentrated in East Austin, reinforcing the lack
+                of private investment in these communities.
+            </p>
+        </div>
+        <div style="background:#000000;">
+            <h2>WHAT CAN I DO?</h2>
+            <p>Contact your local politicians, and inform them of how redlining continues to undermine racial and
+                economic equality in the Austin area. Additionally, you can sign a petition (linked below) to create
+                legislation restricting redlining practices.
+            </p>
+            <p>
+                Regardless of who you are, you can take steps to ensure more equitable housing in the Austin area.
+            </p>
+        </div>
+    </div>
 
-  <div class="prevNext">
-    <div><a href="#s4"></a><a href="#s2"></a></div>
-    <div><a href="#s1"></a><a href="#s3"></a></div>
-    <div><a href="#s2"></a><a href="#s4"></a></div>
-    <div><a href="#s3"></a><a href="#s1"></a></div>
-  </div>
+    <div class="prevNext">
+        <div><a href="#s4"></a><a href="#s2"></a></div>
+        <div><a href="#s1"></a><a href="#s3"></a></div>
+        <div><a href="#s2"></a><a href="#s4"></a></div>
+        <div><a href="#s3"></a><a href="#s1"></a></div>
+    </div>
 
-  <div class="bullets">
-    <a href="#s1">1</a>
-    <a href="#s2">2</a>
-    <a href="#s3">3</a>
-    <a href="#s4">4</a>
-  </div>
+    <div class="bullets">
+        <a href="#s1">1</a>
+        <a href="#s2">2</a>
+        <a href="#s3">3</a>
+        <a href="#s4">4</a>
+    </div>
 </div>
-<div style = "border: 1px solid white; margin-top: 3.5em; padding-bottom: 4em; background: rgb(0,0,0);
+<div style="border: 1px solid white; margin-top: 3.5em; padding-bottom: 4em; background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,1) 37%, rgb(22,22,22) 100%);">
-<div style = "margin-top: 1em; display: flex;
+    <div style="margin-top: 1em; display: flex;
   justify-content: center; ">
-<span class="pg-jumbo pg-hide-small" style = "font-weight: bolder; color: white">Keep the momentum:</span>
-</div>
-<p style = "display: flex;
-  justify-content: center;"><a href="redlining.html" class="pg-button pg-white pg-padding-large pg-large pg-margin-top pg-opacity pg-hover-opacity-off">Sign a <b>PETITION</b></a></p>
+        <span class="pg-jumbo pg-hide-small" style="font-weight: bolder; color: white">Keep the momentum:</span>
+    </div>
+    <p style="display: flex;
+  justify-content: center;"><a href="redlining.html"
+                               class="pg-button pg-white pg-padding-large pg-large pg-margin-top pg-opacity pg-hover-opacity-off">Sign
+        a <b>PETITION</b></a></p>
 </div>
 
-<form id = "myForm" onsubmit="return false">
-    <div style = "display:flex; justify-content: center; margin-top: 50px">
-<p>
+<form id="myForm" onsubmit="return false">
+    <div style="display:flex; justify-content: center; margin-top: 50px">
+        <p>
 	<span class="input">
-		<input type="text" id = "myInput" placeholder="Check my zoning">
+		<input type="text" id="myInput" placeholder="Check my zoning">
 		<span></span>
 	</span>
-</p>
+        </p>
     </div>
-    <div class="cntr" style = "display: flex; justify-content: center; margin-bottom: 50px">
-  <button id = "submission" type="submit">SUBMIT</button>
-</div>
+    <div class="cntr" style="display: flex; justify-content: center; margin-bottom: 50px">
+        <button id="submission" type="submit">SUBMIT</button>
+    </div>
 </form>
 
 
-
-
-
 <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3oeWI7OkJQWnYyBKNG2aJVZl1J5MJea8&callback=initMap">
-    </script>
-    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3oeWI7OkJQWnYyBKNG2aJVZl1J5MJea8&callback=initMap">
+</script>
+<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="mapRedlining.js"></script>
+<script type="text/javascript" src="mapRedlining.js"></script>
 </body>
 </html>
