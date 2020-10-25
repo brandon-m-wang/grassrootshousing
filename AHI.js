@@ -100,7 +100,7 @@ function drawCircles(data) {
         console.log(data[key])
         latlngobj = {lat: parseFloat(data[key]["latitude"]), lng: parseFloat(data[key]["longitude"])}
         const circle = new google.maps.Circle({
-            fillColor: '#e29002',
+            fillColor: '#196F3D',
             fillOpacity: .5,
             strokeColor: 'white',
             strokeWeight: .5,
