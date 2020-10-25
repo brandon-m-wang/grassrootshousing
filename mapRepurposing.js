@@ -120,22 +120,3 @@ function drawCircles(data) {
         });
     };
 }
-
-
-$(function () {
-    $("#submission").click(function (event) {
-        submitUserData()
-        event.preventDefault()
-    });
-});
-
-function submitUserData() {
-    raceSelection = $('#race option:selected').text();
-    genderSelection = $('#gender option:selected').text();
-    sexualitySelection = $('#sexuality option:selected').text();
-    religionSelection = $('#religion option:selected').text();
-
-    fetch(`https://us-central1-safeguard-292111.cloudfunctions.net/getLocations?race=${raceSelection}&religion=${genderSelection}&sexuality=${sexualitySelection}&gender=${religionSelection}`)
-        .then(response => response.json())
-        .then(data => drawCircles(data[0]));
-}
