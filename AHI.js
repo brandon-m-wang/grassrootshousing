@@ -107,7 +107,7 @@ function drawCircles(data) {
             clickable: true,
             map,
             center: latlngobj,
-            radius:150
+            radius:30
         })
         let contentString = "<strong>Project Name</strong>: " + data[key]["project_name"] + "<br><b>Ownership:</b> " + data[key]["Ownership"] + "<br><b>Address:</b> " + data[key]["address"] + "<br><b>Unit Type:</b> " + data[key]["unit_type"]
         circle.setMap(map)
