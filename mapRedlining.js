@@ -97,12 +97,10 @@ fetch('https://grassrootsforfamiliesserver.azurewebsites.net/get_all_redlinings'
     //.then(data => console.log(data["redlinings"][0]["coordinates"]));
     
 function drawCircles(data) {
-    // for (let i in polygonArray) {
-    //     polygonArray[i].setMap(null)
-    // }
     polygonArray = []
     for (key in data) {
         polyCoords = []
+        description = data[key]["area_description_data"]
         datapoint = data[key]["coordinates"]
         grade = data[key]["holc_grade"]
         for (coord in datapoint) {
@@ -139,34 +137,28 @@ function drawCircles(data) {
             fillColor: color,
             fillOpacity: 0.5,
         });
-        // cons0ole.log(polygon)
         polygon.setMap(map)
-        // polygonArray.push(polygon)
-        // let infowindow = new google.maps.InfoWindow({
-        //     content: contentString
-        // });
-        // google.maps.event.addListener(circle, 'click', function (ev) {
-        //     infowindow.setPosition(circle.getCenter());
-        //     infowindow.open(map);
-        // });
+        let contentString = "<strong>Median Household Income</strong>: " + description["Median Household Income"] + "<br><b>Racial Demographics:</b> " + description["Racial Demographics"]
+        polygon.setMap(map)
+        let infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        google.maps.event.addListener(polygon, 'click', function (ev) {
+            //Finds the center of our polygons
+            paths = polygon.getPath()
+            meanLon = 0.0
+            meanLat = 0.0
+            length = paths.length
+            for(i in paths.getArray()) {
+                meanLon += parseFloat(paths.getArray()[i].lng())
+                meanLat += parseFloat(paths.getArray()[i].lat())
+            }
+            meanLon = meanLon/ length
+            meanLat = meanLat/ length
+            
+            polygonCenter = {lat: meanLat, lng: meanLon}
+            infowindow.setPosition(polygonCenter);1
+            infowindow.open(map);
+        });
     }
-}
-
-
-$(function () {
-    $("#submission").click(function (event) {
-        submitUserData()
-        event.preventDefault()
-    });
-});
-
-function submitUserData() {
-    raceSelection = $('#race option:selected').text();
-    genderSelection = $('#gender option:selected').text();
-    sexualitySelection = $('#sexuality option:selected').text();
-    religionSelection = $('#religion option:selected').text();
-
-    fetch(`https://us-central1-safeguard-292111.cloudfunctions.net/getLocations?race=${raceSelection}&religion=${genderSelection}&sexuality=${sexualitySelection}&gender=${religionSelection}`)
-        .then(response => response.json())
-        .then(data => drawCircles(data[0]));
 }
